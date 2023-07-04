@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name" translatable="false">XperiaParts</string>
+    <string name="app_summary" translatable="false">Adjust Various Xperia Settings</string>
+
+    <!-- Display Related Settings -->
+    <string name="display_title">Display</string>
+    <string name="display_setting_header">Image Quality Settings</string>
+    <string name="display_setting_summary">Adjust various display settings</string>
+
+    <!-- Charging Related Settings -->
+    <string name="charging_title">Charging</string>
+    <string name="charger_setting_header">Battery Care</string>
+    <string name="charger_setting_summary">Adjust charging related settings</string>
+
+</resources>
