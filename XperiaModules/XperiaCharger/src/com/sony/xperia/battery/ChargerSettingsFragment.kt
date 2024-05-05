@@ -10,8 +10,8 @@ import android.util.Log
 import android.os.Bundle
 import android.widget.Switch
 import androidx.preference.*
+import android.widget.CompoundButton
 import com.android.settingslib.widget.MainSwitchPreference
-import com.android.settingslib.widget.OnMainSwitchChangeListener
 
 import com.sony.xperia.battery.R
 import com.sony.xperia.battery.widgets.CustomSeekBarPreference
@@ -21,7 +21,7 @@ const val CHARGER_CHARGING_ENABLE_KEY = "device_charging_enable"
 const val CHARGER_CHARGING_LIMIT_KEY = "device_charging_control"
 
 class ChargerSettingsFragment : PreferenceFragment(), Preference.OnPreferenceChangeListener,
-    OnMainSwitchChangeListener {
+    OnCheckedChangeListener {
     private lateinit var chargerUtils: ChargerUtils
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         addPreferencesFromResource(R.xml.advanced_charger_settings)
@@ -57,7 +57,7 @@ class ChargerSettingsFragment : PreferenceFragment(), Preference.OnPreferenceCha
         return true
     }
 
-    override fun onSwitchChanged(switchView: Switch, isChecked: Boolean) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         Log.i(TAG, "Main charger switch toggled to $isChecked")
         chargerUtils.isChargingEnabled = !isChecked
         chargerUtils.chargingLimit = 100
